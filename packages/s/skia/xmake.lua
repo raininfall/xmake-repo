@@ -72,7 +72,7 @@ package("skia")
             os.cp("build/*.a", package:installdir("lib"))
         end
     end)
- 
+  
     on_test(function (package)
         assert(package:check_cxxsnippets({test = [[
             static void test() {
