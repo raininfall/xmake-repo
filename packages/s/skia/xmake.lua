@@ -65,7 +65,6 @@ package("skia")
         os.vrun("bin/gn gen build --args='%s'", argstr:trim())
         os.vrun("ninja -C build")
         os.cp("include", package:installdir())
-        os.cp("third_party", package:installdir())
         if is_plat("windows") then
             os.cp("build/*.lib", package:installdir("lib"))
         else
