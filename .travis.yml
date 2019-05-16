@@ -31,6 +31,18 @@ matrix:
         apt:
           sources:
             - ubuntu-toolchain-r-test
+          packages:
+            - g++-7
+      env:
+        - MATRIX_PLAT=linux
+        - MATRIX_CC=gcc-7
+        - MATRIX_CXX=g++-7
+
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
       env:
         - MATRIX_PLAT=android
 
