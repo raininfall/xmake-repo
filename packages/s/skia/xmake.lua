@@ -28,7 +28,7 @@ package("skia")
     add_includedirs("include/svg")
     add_includedirs("include/third_party")
     add_includedirs("include/utils")
-
+ 
     -- @note windows: only can build for vs2017 or vs2015 update 3
     on_install("macosx", "linux", "windows", function (package)
         local pathes = os.getenv("PATH") or ""
