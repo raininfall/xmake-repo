@@ -73,5 +73,5 @@ script:
     elif [ "$MATRIX_PLAT" = "linux" ]; then 
       CC=$MATRIX_CC CXX=$MATRIX_CXX travis_wait 60 xmake l ./scripts/test.lua -D;
     else
-      travis_wait 60 xmake l ./scripts/test.lua -v -D;
+      travis_wait 60 xmake l ./scripts/test.lua -D;
     fi
