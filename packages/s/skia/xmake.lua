@@ -53,7 +53,7 @@ package("skia")
                       skia_use_zlib = false}
         args.cc  = package:build_getenv("cc")
         args.cxx = package:build_getenv("cxx")
-        local argstr = ""
+        local argstr = "" 
         for k, v in pairs(args) do
             if type(v) == "string" then
                 argstr = argstr .. ' ' .. k .. '=\"' .. v .. "\""
