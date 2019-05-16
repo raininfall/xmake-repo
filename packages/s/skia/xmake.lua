@@ -29,6 +29,7 @@ package("skia")
     add_includedirs("include/third_party")
     add_includedirs("include/utils")
 
+    -- @note windows: only can build for vs2017 or vs2015 update 3
     on_install("macosx", "linux", "windows", function (package)
         local pathes = os.getenv("PATH") or ""
         pathes = pathes .. path.envsep() .. path.join(os.curdir(), "depot_tools")
@@ -65,6 +66,7 @@ package("skia")
         os.vrun("bin/gn gen build --args='%s'", argstr:trim())
         os.vrun("ninja -C build")
         os.cp("include", package:installdir())
+        os.cp("third_party/skcms/*.h", package:installdir("third_party/skcms"))
         if is_plat("windows") then
             os.cp("build/*.lib", package:installdir("lib"))
         else
