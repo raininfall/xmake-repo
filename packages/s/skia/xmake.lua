@@ -54,6 +54,9 @@ package("skia")
                       skia_use_zlib = false}
         args.cc  = package:build_getenv("cc")
         args.cxx = package:build_getenv("cxx")
+        if is_plat("linux") then
+            args.extra_cflags = "-mavx2"
+        end
         local argstr = "" 
         for k, v in pairs(args) do
             if type(v) == "string" then
