@@ -9,7 +9,7 @@ package("doctest")
     add_versions("2.3.1", "b3d3c6133874e3a8c8e319cab33167156b6b1d2ed1ddde08c2655193cdeb58a0")
 
     on_install(function (package)
-        os.cp("doctest", package:installdir("include"))
+        os.cp("doctest/", package:installdir("include"))
     end)
 
     on_test(function (package)
